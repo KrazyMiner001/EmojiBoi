@@ -1,5 +1,6 @@
 # EmojiBoi
-do ALL these commands in the directory of the main files
+do ALL these commands in the directory of the main files.
+
 install dependencies:
 `npm i discord.js discord-akario`
 
