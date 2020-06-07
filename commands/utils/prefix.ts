@@ -7,7 +7,7 @@ import * as Discord from 'discord.js'
 class PrefixCommand extends Command {
     constructor() {
         super('prefix', {
-            aliases: ['prefix'],
+            aliases: ['prefix', 'pf'],
             cooldown: 1800000,
             ratelimit: 1,
             args: [

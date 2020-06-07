@@ -5,7 +5,7 @@ import * as Discord from 'discord.js'
 class CreateEmojiCommand extends Command {
     constructor() {
         super('HowAmnyEmojia', {
-            aliases: ['emojis'],
+            aliases: ['emojis', 'hm'],
 
         });
     }
