@@ -19,7 +19,7 @@ class MyClient extends Akairo.AkairoClient {
     }
 }
 const client = new MyClient();
-client.login(config.token);
+client.login(process.env.token);
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setActivity("e.help");
