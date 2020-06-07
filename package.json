@@ -1,0 +1,30 @@
+{
+  "name": "emojiboi",
+  "version": "1.0.0",
+  "description": "do ALL these commands in the directory of the main files.",
+  "main": "index.ts",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "discord-akairo": "^8.0.0",
+    "discord.js": "^12.2.0",
+    "fs": "^0.0.1-security",
+    "mongoose": "^5.9.17",
+    "salvage.db": "^1.1.0",
+    "ts-node": "^8.10.2",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrazyMiner001/EmojiBoi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KrazyMiner001/EmojiBoi/issues"
+  },
+  "homepage": "https://github.com/KrazyMiner001/EmojiBoi#readme"
+}
