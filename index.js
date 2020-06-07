@@ -1,18 +1,39 @@
-var Discord = require('discord.js');
-var client = new Discord.Client();
-client.on('ready', function () {
-    console.log("Logged in as " + client.user.tag + "!");
-});
-function getTextPart(text, part) {
-    var res = text.split(";");
-    return res[part];
-}
-client.on('message', function (msg) {
-    if (msg.content.includes(";")) {
-        console.log(getTextPart(msg.content, 1) + ' ' + getTextPart(msg.content, 0));
-        msg.guild.emojis.create(getTextPart(msg.content, 1), getTextPart(msg.content, 0))
-            .then(function (emoji) { return console.log("Created new emoji with name " + emoji.name); })["catch"](console.error);
-        (function (emoji) { return msg.reply('Added new emoji :thumbsup:'); });
+const tslib_1 = require("tslib");
+const Akairo = require("discord-akairo");
+const config = require('./config.json');
+var guildConf = require('./storages/guildConf.json');
+const db = require('./db')
+class MyClient extends Akairo.AkairoClient {
+    constructor() {
+        super({}, {});
+        this.commandHandler = new Akairo.CommandHandler(this, {
+            directory: './commands/',
+            prefix: (message) => {
+                return guildConf[message.guild.id].prefix;
+            },
+        });
+        this.commandHandler.loadAll();
     }
+}
+const client = new MyClient();
+client.login(config.token);
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setActivity("e.help");
 });
-client.login('NzE4MTE3MzY3MTI4OTE2MTAw.XtkNOw.vhAqwd9YrWFGic7kEzrwRhTom4A');
+client.on('guildCreate', (guild) => { // If the Bot was added on a server, proceed
+    if (!guildConf[guild.id]) { // If the guild's id is not on the GUILDCONF File, proceed
+        guildConf[guild.id] = {
+            prefix: config.prefix
+        }
+    }
+    fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
+        if (err) console.log(err)
+    })
+});
+client.on('guildDelete', (guild) => { // If the Bot was removed on a server, proceed
+    delete guildConf[guild.id]; // Deletes the Guild ID and Prefix
+    fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err) => {
+        if (err) console.log(err)
+    })
+});
