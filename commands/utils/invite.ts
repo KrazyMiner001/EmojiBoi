@@ -1,8 +1,5 @@
 
 const { Command } = require('discord-akairo');
-const config = require('../../config.json')
-var guildConf = require('../../storages/guildConf.json');
-const fs = require('fs');
 import * as Discord from 'discord.js'
 class InviteCommand extends Command {
   constructor() {

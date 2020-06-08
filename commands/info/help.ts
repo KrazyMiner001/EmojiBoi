@@ -1,8 +1,6 @@
-import * as Akario from "discord-akairo";
+import { Command } from "discord-akairo";
 import * as Discord from "discord.js";
-const config = require("../../config.json");
-var guildConf = require("../../storages/guildConf.json");
-class PingCommand extends Akario.Command {
+class PingCommand extends Command {
   constructor() {
     super("help", {
       aliases: ["h", "help"],
@@ -32,11 +30,10 @@ class PingCommand extends Akario.Command {
           .each((command) =>
             _.setDescription(
               _.description +
-                `\`${
-                  guildConf[message.guild!.id].prefix
-                }${command.description.usage}\` - ${command.description.text} - aliases: ${
-                  command.aliases.join(", ")
-                }\n\n`,
+              `
+              \`${command.description.usage}\` - ${command.description.text} - aliases: ${
+              command.aliases.join(", ")
+              }\n`,
             )
           );
         message.channel.send(_);
