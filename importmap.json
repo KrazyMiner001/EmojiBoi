@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "d3": "https://cdn.pika.dev/d3@5.15.0",
+    "lodash": "https://dev.jspm.io/lodash@4.17.15",
+    "moment": "https://dev.jspm.io/moment@2.24.0",
+    "uuid": "https://deno.land/std/uuid/mod.ts"
+  }
+}

@@ -4,9 +4,7 @@
   "description": "do ALL these commands in the directory of the main files.",
   "main": "index.ts",
   "dependencies": {
-    "@types/better-sqlite3": "^5.4.0",
     "@types/node": "^14.0.11",
-    "ascii-table": "^0.0.9",
     "discord-akairo": "^8.0.0",
     "discord.js": "^12.2.0",
     "fs": "^0.0.1-security",
