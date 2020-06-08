@@ -25,26 +25,23 @@ class PrefixCommand extends Command {
         });
     }
 
-    exec(message: Discord.Message, args: any) {
+    async exec(message: Discord.Message, args: any) {
         message.channel.send(`Updating...`)
-        guildConf[message.guild!.id].prefix = args.newprefix;
-        if (!guildConf[message.guild!.id].prefix) {
-            guildConf[message.guild!.id].prefix = config.prefix; // If you didn't specify a Prefix, set the Prefix to the Default Prefix
-        };
+
+        await this.client.settings.set(message.guild!.id, 'prefix', args.prefix);
+
         const _ = new Discord.MessageEmbed()
             .setTitle("Done! 👍")
             .setDescription(
                 `
-                The new prefix is \`${guildConf[message.guild!.id].prefix}\`
+                The new prefix is \`${args.prefix}\`
                 Keep note that he bot restarts on change, until https://github.com/discord-akairo/discord-akairo/pull/125 gets merged it'll be like this.
                 `
 
             )
             .setColor(`#00FF00`);
-        message.channel.send(_);
-        fs.writeFile('./storages/guildConf.json', JSON.stringify(guildConf, null, 2), (err: any) => {
-            if (err) console.log(err)
-        })
+        return message.channel.send(_);
+
 
 
     }
