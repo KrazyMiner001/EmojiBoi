@@ -6,13 +6,19 @@ class DeleteEmojiCommand extends Akairo.Command {
   constructor() {
     super('deletemoji', {
       aliases: ['delete', 'd'],
+      description: {
+        text: 'Deletes an emoji',
+        usage: `delete [emoji to delete]`
+      },
       args: [
         {
           id: 'name',
           type: 'emoji',
           default: null
         },
-      ]
+      ],
+      clientPermissions: ['MANAGE_EMOJIS'],
+      userPermissions: ['MANAGE_EMOJIS'],
     });
   }
 

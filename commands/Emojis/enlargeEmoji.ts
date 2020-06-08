@@ -4,14 +4,20 @@ import * as Discord from 'discord.js'
 class EnlargeCommand extends Command {
     constructor() {
         super('enlargeemoji', {
-            aliases: ['enlarge', 'e'],
+            aliases: ['enlarge'],
+            description: {
+                text: 'Enlarges a emoji',
+                usage: `enlarge [emoji to enlarge]`
+            },
             args: [
                 {
                     id: 'em',
                     type: 'emoji',
                     default: null
                 },
-            ]
+            ],
+            clientPermissions: ['MANAGE_EMOJIS'],
+            userPermissions: ['MANAGE_EMOJIS'],
         });
     }
     exec(message: Discord.Message, args: any) {

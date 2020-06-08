@@ -2,7 +2,6 @@ const tslib_1 = require("tslib");
 const Akairo = require("discord-akairo");
 const config = require('./config.json');
 var guildConf = require('./storages/guildConf.json');
-const db = require('./db')
 const fs = require('fs');
 import * as Discord from 'discord.js';
 class MyClient extends Akairo.AkairoClient {

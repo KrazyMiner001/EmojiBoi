@@ -5,6 +5,10 @@ class CreateEmojiCommand extends Command {
   constructor() {
     super('createemoji', {
       aliases: ['create', 'c'],
+      description: {
+        text: 'Create an emoji',
+        usage: `create [emoji name] [emoji url]`
+      },
       args: [
         {
           id: 'name',
@@ -14,7 +18,9 @@ class CreateEmojiCommand extends Command {
           id: 'url',
           default: null
         }
-      ]
+      ],
+      clientPermissions: ['MANAGE_EMOJIS'],
+      userPermissions: ['MANAGE_EMOJIS'],
     });
   }
 

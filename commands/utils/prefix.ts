@@ -8,6 +8,10 @@ class PrefixCommand extends Command {
     constructor() {
         super('prefix', {
             aliases: ['prefix', 'pf'],
+            description: {
+                text: 'Changes the prefix, can only be used every 30 minutes',
+                usage: `prefix [new prefix]`
+            },
             cooldown: 1800000,
             ratelimit: 1,
             args: [

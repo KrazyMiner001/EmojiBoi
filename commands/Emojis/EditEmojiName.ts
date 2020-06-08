@@ -5,6 +5,10 @@ class DeleteEmojiCommand extends Akairo.Command {
     constructor() {
         super('renamemoji', {
             aliases: ['rename', 'r'],
+            description: {
+                text: 'Renames an emoji',
+                usage: `rename [emoji to rename] [new name]`
+            },
             args: [
                 {
                     id: 'emoji',
@@ -15,7 +19,9 @@ class DeleteEmojiCommand extends Akairo.Command {
                     id: 'name',
                     default: null
                 },
-            ]
+            ],
+            clientPermissions: ['MANAGE_EMOJIS'],
+            userPermissions: ['MANAGE_EMOJIS'],
         });
     }
 
