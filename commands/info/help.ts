@@ -1,18 +1,19 @@
-import { Command } from "discord-akairo";
+// @ts-nocheck
+import {
+  Command
+} from "discord-akairo";
 import * as Discord from "discord.js";
 class PingCommand extends Command {
   constructor() {
     super("help", {
       aliases: ["h", "help"],
-      args: [
-        {
-          id: "commandname",
-          type: "command",
-        },
-      ],
+      args: [{
+        id: "commandname",
+        type: "commandAlias",
+      },],
       description: {
         text: "Displays this message",
-        usage: `e.help`,
+        usage: `help`,
       },
     });
   }
@@ -26,25 +27,27 @@ class PingCommand extends Command {
             ``,
           )
           .setColor(`#00FF00`);
+        /* tslint:disable */
         this.handler.modules
           .each((command) =>
             _.setDescription(
               _.description +
               `
-              \`${command.description.usage}\` - ${command.description.text} - aliases: ${
+              \`${this.client.settings.get(message.guild.id, 'prefix', 'e.')}${command.description.usage}\` - ${command.description.text} - aliases: ${
               command.aliases.join(", ")
               }\n`,
             )
           );
         message.channel.send(_);
+        /* tslint:enable */
       } else {
         console.log(args.commandname);
 
         const _ = new Discord.MessageEmbed()
-          .setTitle(`\`${args.commandname.aliases}\``)
+          .setTitle(`\`${args.commandname.aliases.join(', ')}\``)
           .setDescription(
             `
-                        ${args.commandname.description.text}\n
+                       ${args.commandname.description.text}\n
                         usage
                         ${args.commandname.description.usage}
                         `,

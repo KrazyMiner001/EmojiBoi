@@ -3,7 +3,7 @@ import * as Discord from 'discord.js'
 
 class EnlargeCommand extends Command {
     constructor() {
-        super('enlargeemoji', {
+        super('enlarge', {
             aliases: ['enlarge'],
             description: {
                 text: 'Enlarges a emoji',

@@ -1,7 +1,7 @@
 
-const { Command } = require('discord-akairo');
 import * as Discord from 'discord.js'
-class PrefixCommand extends Command {
+import * as Akairo from 'discord-akairo';
+class PrefixCommand extends Akairo.Command {
     constructor() {
         super('prefix', {
             aliases: ['prefix', 'pf'],
@@ -23,7 +23,7 @@ class PrefixCommand extends Command {
 
     async exec(message: Discord.Message, args: any) {
         message.channel.send(`Updating...`)
-
+        // @ts-ignore
         await this.client.settings.set(message.guild!.id, 'prefix', args.prefix);
 
         const _ = new Discord.MessageEmbed()

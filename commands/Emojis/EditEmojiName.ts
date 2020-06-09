@@ -3,7 +3,7 @@ const Akairo = require('discord-akairo');
 
 class DeleteEmojiCommand extends Akairo.Command {
     constructor() {
-        super('renamemoji', {
+        super('rename', {
             aliases: ['rename', 'r'],
             description: {
                 text: 'Renames an emoji',
