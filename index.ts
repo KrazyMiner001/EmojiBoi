@@ -1,6 +1,7 @@
 
 const tslib_1 = require("tslib");
-
+const dotenv = require('dotenv');
+dotenv.config();
 const { AkairoClient, CommandHandler } = require('discord-akairo');
 const MongooseProvider = require('akairo-mongoose');
 const mongoose = require('mongoose');

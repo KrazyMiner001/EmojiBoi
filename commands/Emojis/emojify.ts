@@ -8,19 +8,23 @@ class EmojifyCommand extends Akairo.Command {
       aliases: ['emojify', 'makeemojis'],
       description: {
         text: 'makes text emojis',
-        usage: `emojify [text] //please note that all spaces must be _`
+        usage: `emojify //it'll give you a prompt`
       },
       args: [
         {
           id: 'thingtoemojify',
-        },
+          prompt: {
+            start: 'Enter the text to emojify',
+          },
+        }
       ],
     });
   }
 
   exec(message: Discord.Message, args: any) {
-    let text = args.thingtoemojify.replace('_', ' ')
-    let emojifiedText;
+    let text: string = args.thingtoemojify.replace('_', ' ')
+    text = text.toLowerCase();
+    let emojifiedText = "";
     for (var i = 0; i < text.length; i++) {
       if (text.charAt(i) != ' ') {
         emojifiedText = emojifiedText + `:regional_indicator_${(text.charAt(i))}:`;

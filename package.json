@@ -14,6 +14,7 @@
     "async": "^3.2.0",
     "discord-akairo": "git+https://github.com/Zerefdev/discord-akairo.git",
     "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
     "fs": "^0.0.1-security",
     "mongoose": "^5.9.18",
     "node-gyp": "^7.0.0",
