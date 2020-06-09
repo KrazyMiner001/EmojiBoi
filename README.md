@@ -2,7 +2,7 @@
 do ALL these commands in the directory of the main files.
 
 install dependencies:
-`npm i discord.js discord-akario`
+`npm install`
 
 install typescript and nodemon:
 `npm i -g typescript ts-node nodemon`
