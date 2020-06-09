@@ -16,7 +16,7 @@ class PrefixCommand extends Akairo.Command {
                     default: null,
                 },
             ],
-            clientPermissions: ['ADMINISTRATOR'],
+            clientPermissions: ['MANAGE_EMOJIS'],
             userPermissions: ['ADMINISTRATOR'],
         });
     }
