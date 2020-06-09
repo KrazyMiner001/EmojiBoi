@@ -13,7 +13,8 @@ class PingCommand extends Command {
       },],
       description: {
         text: "Displays this message",
-        usage: `help`,
+        usage: `help [OPTIONAL: command]`,
+
       },
     });
   }
@@ -45,14 +46,10 @@ class PingCommand extends Command {
 
         const _ = new Discord.MessageEmbed()
           .setTitle(`\`${args.commandname.aliases.join(', ')}\``)
-          .setDescription(
-            `
-                       ${args.commandname.description.text}\n
-                        Usage
-                        ${args.commandname.description.usage}
-                        `,
-          )
-          .setColor(`#00FF00`);
+          .addField('Usage: ', `**${args.commandname.description.usage}**`)
+          .addField('Needed User Permissions:', `${args.commandname.userPermissions}`)
+          .addField('Needed Bot Permissions:', `${args.commandname.clientPermissions}`)
+          .setTimestamp();
         message.channel.send(_);
         msg.delete();
       }
