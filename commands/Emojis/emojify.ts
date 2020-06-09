@@ -5,7 +5,7 @@ const Akairo = require('discord-akairo');
 class EmojifyCommand extends Akairo.Command {
   constructor() {
     super('emojify', {
-      aliases: ['emojify', 'makeemojis'],
+      aliases: ['emojify', 'makeemojis', 'efy'],
       description: {
         text: 'makes text emojis',
         usage: `emojify [text] //please note that all spaces must be _`
