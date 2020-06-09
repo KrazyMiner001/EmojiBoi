@@ -48,7 +48,7 @@ class PingCommand extends Command {
           .setDescription(
             `
                        ${args.commandname.description.text}\n
-                        usage
+                        Usage
                         ${args.commandname.description.usage}
                         `,
           )
