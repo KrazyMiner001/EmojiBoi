@@ -13,9 +13,8 @@ class EmojifyCommand extends Akairo.Command {
       args: [
         {
           id: 'thingtoemojify',
-          prompt: {
-            start: 'Enter the text to emojify',
-          },
+
+          match: 'content',
         }
       ],
     });
