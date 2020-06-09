@@ -48,7 +48,7 @@ mongoose
     .then(() => {
         console.log('✅ Connected to database');
         const client = new MyClient();
-        client.login(config.token);
+        client.login(process.env.token);
     })
     .catch((err: any) => console.log(err));
 
