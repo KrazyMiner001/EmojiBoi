@@ -18,6 +18,7 @@ class MyClient extends AkairoClient {
             prefix: (message: any) => {
                 if (message.guild) {
                     // The third param is the default.
+                    return "e."
                     return this.settings.get(message.guild.id, 'prefix', 'e.');
                 }
                 return 'e.';
