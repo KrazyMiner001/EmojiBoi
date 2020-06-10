@@ -41,8 +41,9 @@ class MyClient extends AkairoClient {
 
 
 const client = new MyClient();
+const mongodb = process.env.mongodb;
 mongoose
-    .connect('mongodb+srv://TNTMan:MongoDB69420@emojibotprefixes-narhy.gcp.mongodb.net/prefixes?retryWrites=true&w=majority', {
+    .connect(mongodb, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
