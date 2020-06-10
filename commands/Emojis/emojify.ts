@@ -15,8 +15,11 @@ class EmojifyCommand extends Akairo.Command {
           id: 'thingtoemojify',
 
           match: 'content',
-        }
+        },
+
       ],
+      clientPermissions: ['SEND_MESSAGES'],
+      userPermissions: ['SEND_MESSAGES'],
     });
   }
 

@@ -7,6 +7,8 @@ class PingCommand extends Command {
                 text: 'Gets the ping for the bot',
                 usage: `ping`
             },
+            clientPermissions: ['SEND_MESSAGES'],
+            userPermissions: ['SEND_MESSAGES'],
         });
     }
 

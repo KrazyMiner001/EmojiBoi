@@ -9,7 +9,8 @@ class InviteCommand extends Command {
         text: 'Gets the invite',
         usage: `invite`
       },
-
+      clientPermissions: ['SEND_MESSAGES'],
+      userPermissions: ['SEND_MESSAGES'],
 
     });
   }

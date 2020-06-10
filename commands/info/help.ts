@@ -16,6 +16,8 @@ class PingCommand extends Command {
         usage: `help [OPTIONAL: command]`,
 
       },
+      clientPermissions: ['SEND_MESSAGES'],
+      userPermissions: ['SEND_MESSAGES'],
     });
   }
 
@@ -42,13 +44,36 @@ class PingCommand extends Command {
         message.channel.send(_);
         /* tslint:enable */
       } else {
-        console.log(args.commandname);
+
+
+        let userPerms = args.commandname.userPermissions;
+        args.commandname.userPermissions.forEach(function (item: string, index: number) {
+          const caseElementelement = item[0].toUpperCase() + item.slice(1).toLowerCase();
+          console.log(caseElementelement);
+
+          userPerms[index] = caseElementelement;
+        });;
+        const userPermsString = userPerms.join(', ');
+        let userPermsStringSpaced = userPermsString.replace('_', ' ');
+
+
+        let clientPerms = args.commandname.clientPermissions;
+        args.commandname.clientPermissions.forEach(function (item: string, index: number) {
+          const caseElementelement = item[0].toUpperCase() + item.slice(1).toLowerCase();
+          console.log(caseElementelement);
+          clientPerms[index] = caseElementelement;
+        });;
+
+
+        const clientPermsString = clientPerms.join(', ');
+        let clientPermsStringSpaced = clientPermsString.replace('_', ' ');
+
 
         const _ = new Discord.MessageEmbed()
           .setTitle(`\`${args.commandname.aliases.join(', ')}\``)
           .addField('Usage: ', `**${args.commandname.description.usage}**`)
-          .addField('Needed User Permissions:', `${args.commandname.userPermissions}`)
-          .addField('Needed Bot Permissions:', `${args.commandname.clientPermissions}`)
+          .addField('Needed User Permissions:', `${userPermsStringSpaced}`)
+          .addField('Needed Bot Permissions:', `${clientPermsStringSpaced}`)
           .setTimestamp();
         message.channel.send(_);
         msg.delete();
