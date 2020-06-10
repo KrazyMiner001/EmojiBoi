@@ -6,7 +6,7 @@ import * as Discord from "discord.js";
 class PingCommand extends Command {
   constructor() {
     super("help", {
-      aliases: ["h", "help"],
+      aliases: ["help","h"],
       args: [{
         id: "commandname",
         type: "commandAlias",
