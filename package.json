@@ -8,7 +8,7 @@
     "npm": "*"
   },
   "dependencies": {
-    "@types/mongoose": "^5.7.22",
+    "@types/mongoose": "^5.7.23",
     "@types/node": "^14.0.13",
     "akairo-mongoose": "^1.0.4",
     "async": "^3.2.0",
