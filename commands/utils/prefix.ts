@@ -6,7 +6,7 @@ class PrefixCommand extends Akairo.Command {
         super('prefix', {
             aliases: ['prefix', 'pf'],
             description: {
-                text: 'Changes the prefix(does not work as its broken)',
+                text: 'Changes the prefix',
                 usage: `prefix [new prefix]`
             },
             ratelimit: 1,
