@@ -22,7 +22,7 @@
       "type": "git",
       "url": "https://github.com/sonyzach/usfm-validator.git"
     },
-    "salvage.db": "^1.1.0",
+    "salvage.db": "^1.1.2",
     "sequelize": "^5.21.12",
     "sqlite3": "^4.2.0",
     "ts-node": "^8.10.2",
