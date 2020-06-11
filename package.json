@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.1.24",
-    "@swc/core": "^1.1.55",
+    "@swc/core": "^1.1.56",
     "chokidar": "^3.4.0"
   },
   "scripts": {
