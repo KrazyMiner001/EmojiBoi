@@ -29,7 +29,7 @@ class EmojifyCommand extends Akairo.Command {
     let emojifiedText = "";
     for (var i = 0; i < text.length; i++) {
       if (text.charAt(i) != ' ') {
-        emojifiedText = emojifiedText + `:regional_indicator_${(text.charAt(i))}:`;
+        emojifiedText = emojifiedText + `:regional_indicator_${(text.charAt(i))}: `;
       } else {
         emojifiedText = emojifiedText + '  ';
       }
