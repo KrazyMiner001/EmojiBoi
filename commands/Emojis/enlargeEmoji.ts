@@ -19,7 +19,7 @@ class EnlargeCommand extends Command {
                 default: null
             }, ],
             clientPermissions: ['MANAGE_EMOJIS'],
-            userPermissions: ['MANAGE_EMOJIS'],
+        
         });
     }
     exec(message: Discord.Message, args: any) {

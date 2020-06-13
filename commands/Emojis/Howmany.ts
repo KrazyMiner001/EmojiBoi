@@ -11,7 +11,7 @@ class CreateEmojiCommand extends Command {
                 usage: `emojis`
             },
             clientPermissions: ['MANAGE_EMOJIS'],
-            userPermissions: ['MANAGE_EMOJIS'],
+            
 
         });
     }
