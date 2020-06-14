@@ -10,7 +10,6 @@ class PingCommand extends Command {
       category: 'info',
       args: [{
         id: "commandname",
-        type: "commandAlias",
       },],
       description: {
         text: "Displays this message",
@@ -23,30 +22,27 @@ class PingCommand extends Command {
   }
 
   exec(message: Discord.Message, args: any) {
+
     message.channel.send(`Helping...`).then((msg) => {
       if (!args.commandname) {
         const _ = new Discord.MessageEmbed()
           .setTitle("Here's your help!")
-          .setDescription(
-            ``,
-          )
           .setColor(`#00FF00`);
         /* tslint:disable */
-        this.handler.modules
-          .each((command) =>
-            _.setDescription(
-              _.description +
-              `
-              \`${this.client.settings.get(message.guild.id, 'prefix', 'e.')}${command.description.usage}\` - ${command.description.text} - aliases: ${
-              command.aliases.join(", ")
-              }\n`,
-            )
-          );
+        this.handler.categories.each((category) => {
+          _.addField(category.id, `${category.map((command) => `\`${this.client.settings.get(message.guild.id, 'prefix', 'e.')}${command.description.usage}\` - ${command.description.text} - aliases: ${
+            command.aliases.join(", ")
+            }\n\n`)}`
+          )
+
+        }
+        )
         message.channel.send(_);
-        /* tslint:enable */
+
+
       } else {
 
-        
+
 
         let userPerms = args.commandname.userPermissions;
         args.commandname.userPermissions.forEach(function (item: string, index: number) {
