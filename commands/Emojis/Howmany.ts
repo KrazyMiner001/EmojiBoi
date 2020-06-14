@@ -6,12 +6,14 @@ class CreateEmojiCommand extends Command {
     constructor() {
         super('emojis', {
             aliases: ['emojis', 'hm'],
+            category: 'emojis',
             description: {
                 text: 'Gets all the emojis on the server and displays them',
                 usage: `emojis`
             },
             clientPermissions: ['MANAGE_EMOJIS'],
-            userPermissions: ['MANAGE_EMOJIS'],
+            userPermissions: ['SEND_MESSAGES'],
+            
 
         });
     }

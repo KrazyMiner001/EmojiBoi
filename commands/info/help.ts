@@ -6,10 +6,10 @@ import * as Discord from "discord.js";
 class PingCommand extends Command {
   constructor() {
     super("help", {
-      aliases: ["help","h"],
+      aliases: ["help", "h"],
+      category: 'info',
       args: [{
         id: "commandname",
-        type: "commandAlias",
       },],
       description: {
         text: "Displays this message",
@@ -22,28 +22,26 @@ class PingCommand extends Command {
   }
 
   exec(message: Discord.Message, args: any) {
+
     message.channel.send(`Helping...`).then((msg) => {
       if (!args.commandname) {
         const _ = new Discord.MessageEmbed()
           .setTitle("Here's your help!")
-          .setDescription(
-            ``,
-          )
           .setColor(`#00FF00`);
         /* tslint:disable */
-        this.handler.modules
-          .each((command) =>
-            _.setDescription(
-              _.description +
-              `
-              \`${this.client.settings.get(message.guild.id, 'prefix', 'e.')}${command.description.usage}\` - ${command.description.text} - aliases: ${
-              command.aliases.join(", ")
-              }\n`,
-            )
-          );
+        this.handler.categories.each((category) => {
+          _.addField(category.id, `${category.map((command) => `\`${this.client.settings.get(message.guild.id, 'prefix', 'e.')}${command.description.usage}\` - ${command.description.text} - aliases: ${
+            command.aliases.join(", ")
+            }\n\n`).join('')}`
+          )
+
+        }
+        )
         message.channel.send(_);
-        /* tslint:enable */
+
+
       } else {
+
 
 
         let userPerms = args.commandname.userPermissions;
@@ -70,7 +68,7 @@ class PingCommand extends Command {
 
 
         const _ = new Discord.MessageEmbed()
-          .setTitle(`\`${args.commandname.aliases.join(', ')}\``)
+          .setTitle(`\`${args.commandname.aliases.join(', ')}\` - ${args.commandname.category}`)
           .addField('Usage: ', `**${args.commandname.description.usage}**`)
           .addField('Needed User Permissions:', `${userPermsStringSpaced}`)
           .addField('Needed Bot Permissions:', `${clientPermsStringSpaced}`)
