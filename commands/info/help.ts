@@ -32,7 +32,7 @@ class PingCommand extends Command {
         this.handler.categories.each((category) => {
           _.addField(category.id, `${category.map((command) => `\`${this.client.settings.get(message.guild.id, 'prefix', 'e.')}${command.description.usage}\` - ${command.description.text} - aliases: ${
             command.aliases.join(", ")
-            }\n\n`)}`
+            }\n\n`).join('')}`
           )
 
         }
