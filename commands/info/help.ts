@@ -10,6 +10,7 @@ class PingCommand extends Command {
       category: 'info',
       args: [{
         id: "commandname",
+        type: 'commandAlias'
       },],
       description: {
         text: "Displays this message",
@@ -38,10 +39,12 @@ class PingCommand extends Command {
         }
         )
         message.channel.send(_);
+        msg.delete();
 
 
       } else {
 
+        console.log(args.commandname.userPermissions);
 
 
         let userPerms = args.commandname.userPermissions;
