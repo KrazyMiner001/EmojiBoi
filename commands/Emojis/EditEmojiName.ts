@@ -5,6 +5,7 @@ class DeleteEmojiCommand extends Akairo.Command {
     constructor() {
         super('rename', {
             aliases: ['rename', 'r'],
+            category: 'emojis',
             description: {
                 text: 'Renames an emoji',
                 usage: `rename [emoji to rename] [new name]`

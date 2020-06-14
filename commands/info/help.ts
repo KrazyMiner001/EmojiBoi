@@ -6,7 +6,8 @@ import * as Discord from "discord.js";
 class PingCommand extends Command {
   constructor() {
     super("help", {
-      aliases: ["help","h"],
+      aliases: ["help", "h"],
+      category: 'info',
       args: [{
         id: "commandname",
         type: "commandAlias",
@@ -45,6 +46,7 @@ class PingCommand extends Command {
         /* tslint:enable */
       } else {
 
+        
 
         let userPerms = args.commandname.userPermissions;
         args.commandname.userPermissions.forEach(function (item: string, index: number) {
@@ -70,7 +72,7 @@ class PingCommand extends Command {
 
 
         const _ = new Discord.MessageEmbed()
-          .setTitle(`\`${args.commandname.aliases.join(', ')}\``)
+          .setTitle(`\`${args.commandname.aliases.join(', ')}\` - ${args.commandname.category}`)
           .addField('Usage: ', `**${args.commandname.description.usage}**`)
           .addField('Needed User Permissions:', `${userPermsStringSpaced}`)
           .addField('Needed Bot Permissions:', `${clientPermsStringSpaced}`)

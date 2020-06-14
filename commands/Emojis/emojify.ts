@@ -6,6 +6,7 @@ class EmojifyCommand extends Akairo.Command {
   constructor() {
     super('emojify', {
       aliases: ['emojify', 'makeemojis', 'efy'],
+      category: 'emojis',
       description: {
         text: 'makes text emojis',
         usage: `emojify //it'll give you a prompt`

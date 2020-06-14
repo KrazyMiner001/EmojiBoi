@@ -5,6 +5,7 @@ class PrefixCommand extends Akairo.Command {
     constructor() {
         super('prefix', {
             aliases: ['prefix', 'pf'],
+            category: 'utils',
             description: {
                 text: 'Changes the prefix',
                 usage: `prefix [new prefix]`

@@ -3,7 +3,9 @@ import * as Discord from 'discord.js'
 class PingCommand extends Command {
     constructor() {
         super('ping', {
-            aliases: ['ping', 'p'], description: {
+            aliases: ['ping', 'p'],
+            category: 'info',
+            description: {
                 text: 'Gets the ping for the bot',
                 usage: `ping`
             },

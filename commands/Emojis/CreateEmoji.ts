@@ -5,6 +5,7 @@ class CreateEmojiCommand extends Command {
   constructor() {
     super('create', {
       aliases: ['create', 'c'],
+      category: 'emojis',
       description: {
         text: 'Create an emoji',
         usage: `create [emoji name] [emoji url]`

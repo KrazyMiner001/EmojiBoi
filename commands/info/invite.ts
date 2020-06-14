@@ -5,6 +5,7 @@ class InviteCommand extends Command {
   constructor() {
     super('invite', {
       aliases: ['inv', 'invite'],
+      category: 'info',
       description: {
         text: 'Gets the invite',
         usage: `invite`

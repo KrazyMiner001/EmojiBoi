@@ -9,6 +9,7 @@ class EnlargeCommand extends Command {
     constructor() {
         super('enlarge', {
             aliases: ['enlarge', 'l'],
+            category: 'emojis',
             description: {
                 text: 'Enlarges a emoji',
                 usage: `enlarge [emoji to enlarge]`
@@ -19,7 +20,7 @@ class EnlargeCommand extends Command {
                 default: null
             }, ],
             clientPermissions: ['MANAGE_EMOJIS'],
-        
+            userPermissions: ['SEND_MESSAGES'],
         });
     }
     exec(message: Discord.Message, args: any) {
