@@ -36,7 +36,7 @@
     "@swc/cli": "^0.1.24",
     "@swc/core": "^1.2.2",
     "chokidar": "^3.4.0",
-    "ts-node-dev": "^1.0.0-pre.47"
+    "ts-node-dev": "^1.0.0-pre.48"
   },
   "scripts": {
     "start": "ts-node index.ts"
