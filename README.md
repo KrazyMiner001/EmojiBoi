@@ -5,7 +5,7 @@ install dependencies:
 `npm install`
 
 install typescript and nodemon:
-`npm i -g typescript ts-node nodemon`
+`npm i -g typescript ts-node-dev`
 
 run the bot:
-`nodemon ./index.ts`
+`ts-node-dev index.ts`
