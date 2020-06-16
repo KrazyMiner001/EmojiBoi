@@ -1,1 +1,1 @@
-nodemon .\index.ts
+ts-node-dev index.ts
