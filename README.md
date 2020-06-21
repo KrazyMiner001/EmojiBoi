@@ -1,3 +1,5 @@
+[![Discord Bots](https://top.gg/api/widget/718471280914858015.svg)](https://top.gg/bot/718471280914858015)
+
 # EmojiBoi
 
 ## First Time setup
