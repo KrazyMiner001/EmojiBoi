@@ -1,5 +1,5 @@
 [![Discord Bots](https://top.gg/api/widget/718471280914858015.svg)](https://top.gg/bot/718471280914858015)
-<iframe src="https://player.vimeo.com/video/431168215" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 # EmojiBoi
 
 ## First Time setup
