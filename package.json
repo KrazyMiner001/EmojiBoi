@@ -33,7 +33,7 @@
     "typescript": "^3.9.5"
   },
   "devDependencies": {
-    "@swc/cli": "^0.1.24",
+    "@swc/cli": "^0.1.26",
     "@swc/core": "^1.2.6",
     "chokidar": "^3.4.0",
     "ts-node-dev": "^1.0.0-pre.49"
