@@ -30,7 +30,8 @@
     "sqlite3": "^4.2.0",
     "ts-node": "^8.10.2",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "snyk": "^1.350.1"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.26",
@@ -39,7 +40,9 @@
     "ts-node-dev": "^1.0.0-pre.49"
   },
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -50,5 +53,6 @@
   "bugs": {
     "url": "https://github.com/KrazyMiner001/EmojiBoi/issues"
   },
-  "homepage": "https://github.com/KrazyMiner001/EmojiBoi#readme"
+  "homepage": "https://github.com/KrazyMiner001/EmojiBoi#readme",
+  "snyk": true
 }
