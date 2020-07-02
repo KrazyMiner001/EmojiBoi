@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.1.26",
-    "@swc/core": "^1.2.6",
+    "@swc/core": "^1.2.7",
     "chokidar": "^3.4.0",
     "ts-node-dev": "^1.0.0-pre.49"
   },
