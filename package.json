@@ -17,25 +17,32 @@
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "fs": "^0.0.1-security",
-    "mongoose": "^5.9.19",
+    "mongoose": "^5.9.20",
     "node-gyp": "^7.0.0",
     "nodemon": "^2.0.4",
-    "salvage.db": "^1.1.2",
-    "sequelize": "^5.21.13",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sonyzach/usfm-validator.git"
+    },
+    "salvage.db": "^1.1.4",
+    "sequelize": "^5.22.2",
     "sqlite": "^4.0.11",
     "sqlite3": "^4.2.0",
     "ts-node": "^8.10.2",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "snyk": "^1.361.3"
   },
   "devDependencies": {
-    "@swc/cli": "^0.1.24",
-    "@swc/core": "^1.2.4",
+    "@swc/cli": "^0.1.26",
+    "@swc/core": "^1.2.6",
     "chokidar": "^3.4.0",
     "ts-node-dev": "^1.0.0-pre.49"
   },
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -46,5 +53,6 @@
   "bugs": {
     "url": "https://github.com/KrazyMiner001/EmojiBoi/issues"
   },
-  "homepage": "https://github.com/KrazyMiner001/EmojiBoi#readme"
+  "homepage": "https://github.com/KrazyMiner001/EmojiBoi#readme",
+  "snyk": true
 }

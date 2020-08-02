@@ -1,3 +1,6 @@
+[![Discord Bots](https://top.gg/api/widget/718471280914858015.svg)](https://top.gg/bot/718471280914858015)
+[![Run on Repl.it](https://repl.it/badge/github/KrazyMiner001/EmojiBoi)](https://repl.it/github/KrazyMiner001/EmojiBoi)
+
 # EmojiBoi
 
 ## First Time setup
