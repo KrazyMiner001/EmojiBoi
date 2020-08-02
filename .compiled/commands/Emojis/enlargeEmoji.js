@@ -1,14 +1,13 @@
-const {
-    Command
-} = require('discord-akairo');
-import * as Discord from 'discord.js'
-var fs = require('fs')
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_2 = require("tslib");
+const { Command } = require('discord-akairo');
+const Discord = tslib_2.__importStar(require("discord.js"));
+var fs = require('fs');
 //import CloudConvert from 'cloudconvert'
-import * as dotenv from "dotenv"
-dotenv.config()
-
+const dotenv = tslib_2.__importStar(require("dotenv"));
+dotenv.config();
 //const cloudConvert = new CloudConvert(process.env.token, true)
-
 class EnlargeCommand extends Command {
     constructor() {
         super('enlarge', {
@@ -19,20 +18,18 @@ class EnlargeCommand extends Command {
                 usage: `enlarge [emoji to enlarge]`
             },
             args: [{
-                id: 'em',
-                type: 'emoji',
-                default: null
-            },],
+                    id: 'em',
+                    type: 'emoji',
+                    default: null
+                },],
             clientPermissions: ['MANAGE_EMOJIS'],
             userPermissions: ['SEND_MESSAGES'],
         });
     }
-    async exec(message: Discord.Message, args: any) {
+    async exec(message, args) {
         let url = args.em.url;
         console.log(url);
-
         // if (args.em.url.endsWith('svg')) {
-
         //     let job = await cloudConvert.jobs.create({
         //         "tasks": {
         //             "discord-svg": {
@@ -61,14 +58,11 @@ class EnlargeCommand extends Command {
         //             }
         //         }
         //     });
-
-
-            const attachment = new Discord.MessageAttachment(`${url}`);
-            message.channel.send(attachment);
-            // if (args.em.url.endsWith('svg')) {
-            //     fs.unlink('file.png', console.error)
-            // }
-        }
+        const attachment = new Discord.MessageAttachment(`${url}`);
+        message.channel.send(attachment);
+        // if (args.em.url.endsWith('svg')) {
+        //     fs.unlink('file.png', console.error)
+        // }
     }
-
+}
 module.exports = EnlargeCommand;
