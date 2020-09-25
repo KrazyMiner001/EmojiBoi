@@ -15,7 +15,7 @@
     "discord-akairo": "^8.0.0",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
-    "fs": "^0.0.1-security",
+    "fs": "^0.0.2",
     "mongoose": "^5.9.20",
     "node-gyp": "^7.0.0",
     "nodemon": "^2.0.4",
