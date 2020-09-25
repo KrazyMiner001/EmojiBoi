@@ -70,6 +70,7 @@ web_modules/
 
 # dotenv environment variables file
 .env.test
+.env
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -114,3 +115,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 files.zip
+
+.compiled/

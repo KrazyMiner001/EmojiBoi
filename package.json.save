@@ -2,12 +2,13 @@
   "name": "emojiboi",
   "version": "1.0.0",
   "description": "do ALL these commands in the directory of the main files.",
-  "main": ".compiled/index.js",
+  "main": "index.ts",
   "engines": {
     "node": "12.x",
     "npm": "*"
   },
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/mongoose": "^5.7.26",
     "@types/node": "^14.0.27",
     "akairo-mongoose": "^1.0.4",
@@ -23,7 +24,9 @@
       "type": "git",
       "url": "https://github.com/sonyzach/usfm-validator.git"
     },
+    "salvage.db": "^1.1.4",
     "sequelize": "^6.3.4",
+    "sqlite3": "^5.0.0",
     "ts-node": "^8.10.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.5",

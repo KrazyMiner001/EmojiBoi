@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose1 = require('mongoose');
+const Schema = mongoose1.Schema;
 
 const guildSchema = new Schema({
     // 'id' field must be first - you can name it whatever you want
@@ -14,4 +14,4 @@ const guildSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Guild', guildSchema);
+module.exports = mongoose1.model('Guild', guildSchema);

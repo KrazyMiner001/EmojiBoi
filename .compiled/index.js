@@ -5,7 +5,6 @@ dotenv.config();
 const { AkairoClient, CommandHandler } = require('discord-akairo');
 const MongooseProvider = require('akairo-mongoose');
 const mongoose = require('mongoose');
-const config = require("./config.json");
 const model = require("./models/Prefixes");
 class MyClient extends AkairoClient {
     constructor() {
@@ -35,10 +34,7 @@ class MyClient extends AkairoClient {
 const client = new MyClient();
 const mongodb = process.env.mongodb;
 mongoose
-    .connect(mongodb, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+    .connect(mongodb, {})
     .then(() => {
     console.log('✅ Connected to database');
     const client = new MyClient();
