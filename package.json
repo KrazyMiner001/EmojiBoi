@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "chokidar": "^3.4.0",
-    "ts-node-dev": "^1.0.0-pre.49"
+    "ts-node-dev": "^1.1.1"
   },
   "scripts": {
     "start": "ts-node index.ts",
