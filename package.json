@@ -16,7 +16,7 @@
     "discord.js": "^12.4.0",
     "dotenv": "^8.2.0",
     "fs": "^0.0.2",
-    "mongoose": "^5.9.20",
+    "mongoose": "^5.12.3",
     "node-gyp": "^7.0.0",
     "nodemon": "^2.0.4",
     "repository": {
