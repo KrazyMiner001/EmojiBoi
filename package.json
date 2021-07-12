@@ -18,7 +18,7 @@
     "fs": "^0.0.2",
     "mongoose": "^5.9.20",
     "node-gyp": "^7.0.0",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.12",
     "repository": {
       "type": "git",
       "url": "https://github.com/sonyzach/usfm-validator.git"
